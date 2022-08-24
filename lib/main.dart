@@ -47,16 +47,16 @@ class _MyAppState extends State<MyApp> {
     },
   ];
   var _questionIndex = 0;
+  var _totalScore = 0;
 
-  void _answerQuestion() {
+  void _answerQuestion(int answerScore) {
+    _totalScore += answerScore;
+
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    if (_questionIndex < _questions.length) {
-      print("We have more questions");
-    } else {
-      print("No more questions!");
-    }
+
+    print(_totalScore);
   }
 
   @override
